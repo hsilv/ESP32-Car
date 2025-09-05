@@ -37,6 +37,12 @@ public:
     void setBrightness(int brightness);
     void setContrast(int contrast);
     
+    // Resoluciones disponibles
+    void setQQVGA();  // 160x120
+    void setQVGA();   // 320x240
+    void setVGA();    // 640x480
+    void setSVGA();   // 800x600
+    
     // Getters para información de la cámara
     framesize_t getCurrentResolution();
     int getCurrentQuality();

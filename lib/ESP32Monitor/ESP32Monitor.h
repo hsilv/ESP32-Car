@@ -29,6 +29,12 @@ public:
     String getCameraStatus();
     String getCameraInfo();
     
+    // Métodos para cambiar resolución de cámara
+    void setCameraQQVGA();
+    void setCameraQVGA();
+    void setCameraVGA();
+    void setCameraSVGA();
+    
     // Getters para información del sistema
     String getChipModel();
     String getChipRevision();

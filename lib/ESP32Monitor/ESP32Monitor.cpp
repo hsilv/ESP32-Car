@@ -182,3 +182,20 @@ String ESP32Monitor::getCameraStatus() {
 String ESP32Monitor::getCameraInfo() {
     return camera.getCameraInfo();
 }
+
+// Métodos para cambiar resolución de cámara
+void ESP32Monitor::setCameraQQVGA() {
+    camera.setQQVGA();
+}
+
+void ESP32Monitor::setCameraQVGA() {
+    camera.setQVGA();
+}
+
+void ESP32Monitor::setCameraVGA() {
+    camera.setVGA();
+}
+
+void ESP32Monitor::setCameraSVGA() {
+    camera.setSVGA();
+}

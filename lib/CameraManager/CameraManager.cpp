@@ -30,12 +30,12 @@ void CameraManager::setupCameraConfig() {
     config.xclk_freq_hz = 20000000;
     config.pixel_format = PIXFORMAT_JPEG;
     
-    // Configuración conservadora para evitar crashes
-    config.frame_size = FRAMESIZE_QQVGA; // 160x120 - resolución más pequeña
-    config.jpeg_quality = 15; // Calidad más baja
+    // Configuración mejorada para mejor calidad
+    config.frame_size = FRAMESIZE_QVGA; // 320x240 - resolución mejorada
+    config.jpeg_quality = 12; // Calidad media-alta
     config.fb_count = 1; // Un buffer
     config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
-    config.fb_location = CAMERA_FB_IN_DRAM; // Usar DRAM en lugar de PSRAM
+    config.fb_location = CAMERA_FB_IN_DRAM; // Usar DRAM
 }
 
 bool CameraManager::begin() {
@@ -281,4 +281,25 @@ int CameraManager::getCurrentContrast() {
         return s->status.contrast;
     }
     return -1;
+}
+
+// Métodos para cambiar resolución
+void CameraManager::setQQVGA() {
+    setResolution(FRAMESIZE_QQVGA);
+    Serial.println("Resolución cambiada a QQVGA (160x120)");
+}
+
+void CameraManager::setQVGA() {
+    setResolution(FRAMESIZE_QVGA);
+    Serial.println("Resolución cambiada a QVGA (320x240)");
+}
+
+void CameraManager::setVGA() {
+    setResolution(FRAMESIZE_VGA);
+    Serial.println("Resolución cambiada a VGA (640x480)");
+}
+
+void CameraManager::setSVGA() {
+    setResolution(FRAMESIZE_SVGA);
+    Serial.println("Resolución cambiada a SVGA (800x600)");
 }
